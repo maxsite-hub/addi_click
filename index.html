@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=480" />
+    <title>Addi Click Lace</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <link rel="stylesheet" href="fonts/stylesheet.css" />
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="js/lt_landing_valid_form.js"></script>
+    <script type="text/javascript" src="js/lt_landing_script.js"></script>
+    <script type="text/javascript">
+      $jsonData = {
+        RU: {
+          currency: "\u0440\u0443\u0431.",
+          productsum: 1990,
+          oldproductsum: 3980,
+          delivery: 0,
+          totalsum: "1990",
+        },
+      };
+    </script>
+
+    <style>
+      .ajax_loader {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <section class="s1">
+        <div class="s1-title">
+          <h1>
+            <span class="s1-title-top">Addi Click Lace</span>
+          </h1>
+          <div class="s1-title-bottom">Наборы спиц для вязания</div>
+        </div>
+
+        <div class="s1-list">
+          <div class="s1-list-item">
+            <img src="img/icon-true.png" alt="" />
+            <div class="s1-list-text">Гладкое никелирован-ное покрытие</div>
+          </div>
+          <div class="s1-list-item">
+            <img src="img/icon-true.png" alt="" />
+            <div class="s1-list-text">
+              Всё необходимое<br />
+              в 1 наборе
+            </div>
+          </div>
+          <div class="s1-list-item">
+            <img src="img/icon-true.png" alt="" />
+            <div class="s1-list-text">Удобный кожаный чехол- органайзер</div>
+          </div>
+        </div>
+
+        <div class="s1-present">
+          Норковая пряжа и кулон в виде сердца <br />
+          <span>в подарок!</span>
+        </div>
+
+        <div class="form-wrapper">
+          <div class="price">
+            <div class="price-block">
+              <div class="price-old">
+                <div class="price-old-val oldproductsum">3980 руб.</div>
+              </div>
+              <div class="price-new">
+                <span class="price-new-val productsum">1990 руб.</span>
+              </div>
+            </div>
+
+            <div class="price-discount">
+              Активирован<br />
+              промокод на скидку
+              <span>55%</span>
+            </div>
+          </div>
+          <script
+            src="js/date.min.js"
+            integrity=""
+            crossorigin="anonymous"
+          ></script>
+          <script>
+            $(document).ready(function () {
+              date = Date.today().addDays(-7);
+              date_2 = Date.today();
+
+              date = date.toString("dd.MM.yyyy");
+              date_2 = date_2.toString("dd.MM.yyyy");
+
+              $(".date_1").html(date);
+              $(".date_2").html(date_2);
+            });
+          </script>
+          <div class="date">
+            <div class="date-suptitle">Осталось 5 наборов со скидкой</div>
+            <div class="date-title">
+              акция действует до <span class="date_1"></span> -
+              <span class="date_2"></span>
+            </div>
+          </div>
+          <div class="container">
+            <form action="#" method="post" class="orderformcdn">
+              <div class="form-item">
+                <select
+                  name="country"
+                  class="countryselect form-control location"
+                >
+                  <option value="RU" selected disabled>Россия</option>
+                </select>
+              </div>
+              <div class="form-item">
+                <input
+                  type="text"
+                  name="name"
+                  class="field form-control userneme"
+                  placeholder="Ваше имя..."
+                  value=""
+                />
+              </div>
+              <div class="form-item">
+                <input
+                  type="text"
+                  name="phone"
+                  class="field form-control phone"
+                  placeholder="Ваш телефон..."
+                  value=""
+                />
+              </div>
+              <input
+                type="hidden"
+                name="productsum"
+                class="productsum"
+                value="1 руб."
+              />
+              <input type="hidden" name="delivery" value="0 руб." />
+              <input
+                type="hidden"
+                name="totalsum"
+                class="productsum"
+                value="1 руб."
+              />
+              <input type="hidden" name="user" value="1" />
+              <input
+                type="hidden"
+                name="address"
+                value="Уточнить у покупателя"
+              />
+
+              <div class="reolader form-item">
+                <button
+                  type="submit"
+                  class="form-btn mm_button"
+                  onclick="checkFields(event, this);"
+                >
+                  Заказать сейчас
+                </button>
+                <div class="ajax_loader_block">
+                  <img
+                    class="ajax_loader"
+                    src="img/ajax-loader.gif"
+                    alt="Идет отправка данных"
+                  />
+                  <span class="ajax_loader">Идет отправка данных</span>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="timer">
+            <div class="timer-title">До окончания акции осталось:</div>
+            <div class="countbox"></div>
+            <div class="timer-body">
+              <div class="timer-item">
+                <div class="timer-val">
+                  <div class="timer-num">0</div>
+                  <div class="timer-num">0</div>
+                </div>
+                <div class="timer-name">Часов</div>
+              </div>
+              <div class="timer-separate">:</div>
+              <div class="timer-item">
+                <div class="timer-val">
+                  <div class="timer-num">0</div>
+                  <div class="timer-num">0</div>
+                </div>
+                <div class="timer-name">Минут</div>
+              </div>
+              <div class="timer-separate">:</div>
+              <div class="timer-item">
+                <div class="timer-val">
+                  <div class="timer-num">0</div>
+                  <div class="timer-num">0</div>
+                </div>
+                <div class="timer-name">Секунд</div>
+              </div>
+            </div>
+            <div class="timer-footer">
+              <u>Политика конфиденциальности</u>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="s2">
+        <div class="container">
+          <h2>Знаменитое немецкое качество</h2>
+          <div class="s2-item">
+            <img src="img/s2.jpg" alt="" />
+            <p>
+              Addi – ведущий мировой бренд инструментов и аксессуаров для
+              вязания.
+            </p>
+          </div>
+        </div>
+        <div class="s2-item-2">
+          <b
+            ><p>
+              Стильный дизайн, красивая упаковка в сочетании с разумной ценой
+              делают наборы Addi Click Lace желанными для всех любителей
+              вязания!
+            </p></b
+          >
+          <img class="gif" src="gif/1.gif" alt="" />
+          <p>
+            Спицы Addi сделаны без резьбового соединения, поэтому их не нужно
+            закручивать и использовать для этого ключ. С системой Addi Click
+            спица и леска просто защелкиваются, быстро и удобно. При этом
+            соединение гладкое и незаметное.
+          </p>
+        </div>
+      </section>
+
+      <section class="s3">
+        <div class="container">
+          <h2>Вяжите в радость!</h2>
+          <div class="s3-slider">
+            <img src="img/s3-1.jpg" alt="" />
+            <img src="img/s3-2.jpg" alt="" />
+            <img src="img/s3-3.jpg" alt="" />
+            <img src="img/s3-4.jpg" alt="" />
+            <img src="img/s3-5.jpg" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section class="s4">
+        <div class="container">
+          <h2>Что в наборе?</h2>
+          <div class="s4-item">
+            <img class="img" src="img/s4.jpg" alt="" />
+            <div class="list-block">
+              <ul class="list">
+                <li>8 пар спиц: N 3.5, 4.0, 4.5, 5.0, 5.5, 6.0, 7.0, 8.0</li>
+                <li>1 соединительный элемент</li>
+                <li>Красивый кулон "Золотое сердце"</li>
+              </ul>
+              <ul class="list">
+                <li>5 съемных лесок: 40 см, 50 см, 60 см, 80 см, 100 см</li>
+                <li>Кожаный чехол с магнитными кнопками</li>
+                <li>Моток норковой пряжи - 80 г.</li>
+              </ul>
+            </div>
+          </div>
+          <h3>
+            <span>С набором Addi возможны </span><br />
+            более 500 комбинаций спиц!
+          </h3>
+          <a href="#form" class="form-btn mm_button"> Заказать сейчас </a>
+        </div>
+      </section>
+
+      <section class="s5">
+        <div class="container">
+          <h2>Особенности</h2>
+          <div class="s5-item">
+            <div class="s5-item-list">
+              <img src="img/s5-1.jpg" alt="" />
+              <p>
+                8 пар спиц различного диаметра (3.5-8) позволят Вам с комфортом
+                вязать абсолютно любые изделия
+              </p>
+            </div>
+            <div class="s5-item-list">
+              <img src="img/s5-2.jpg" alt="" />
+              <p>
+                5 съемных лесок разной длины помогут держать любое количество
+                петель без риска их потерять, а коннектор позволит соединить
+                лески между собой для вязки самых больших изделий.
+              </p>
+            </div>
+            <div class="s5-item-list">
+              <img src="img/s5-3.jpg" alt="" />
+              <p>
+                Стильный и удобный чехол из натуральной кожи не даст спицам
+                потеряться, а также станет прекрасным дополнением к образу, если
+                вы возьмете его с собой
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="s6">
+        <div class="container">
+          <h2>6 цветов на выбор!</h2>
+          <div class="s6-item">
+            <div class="s6-item-list">
+              <img src="img/s6-1.png" alt="" />
+              <p>Черный</p>
+            </div>
+            <div class="s6-item-list">
+              <img src="img/s6-2.png" alt="" />
+              <p>Красный</p>
+            </div>
+            <div class="s6-item-list">
+              <img src="img/s6-3.png" alt="" />
+              <p>Синий</p>
+            </div>
+            <div class="s6-item-list">
+              <img src="img/s6-4.png" alt="" />
+              <p>Сиреневый</p>
+            </div>
+            <div class="s6-item-list">
+              <img src="img/s6-5.png" alt="" />
+              <p>Шоколадный</p>
+            </div>
+            <div class="s6-item-list">
+              <img src="img/s6-6.png" alt="" />
+              <p>Фиолетовый</p>
+            </div>
+          </div>
+          <a href="#form" class="form-btn mm_button"> Заказать сейчас </a>
+        </div>
+      </section>
+
+      <section class="s7">
+        <div class="container">
+          <h2>Преимущества</h2>
+          <div class="s7-item">
+            <div class="s7-item-list">
+              <img src="img/s7-1.png" alt="" />
+              <p>
+                <b
+                  >Никелированные укороченные супергладкие спицы ADDI (Адди)
+                </b>
+                с удлиненными кончиками отлично лежат в руке и проходят сквозь
+                петли
+              </p>
+            </div>
+          </div>
+          <div class="s7-item">
+            <div class="s7-item-list">
+              <img src="img/s7-2.png" alt="" />
+              <p>
+                <b>Инновационное соединение лески со спицей "Click&Lock"</b>
+                очень надежно и не даст Вам потерять ни одной петли
+              </p>
+            </div>
+          </div>
+          <div class="s7-item">
+            <div class="s7-item-list">
+              <img src="img/s7-3.png" alt="" />
+              <p>
+                <b>Сбалансированный набор спиц и лесок </b>позволяет Вам
+                адаптироваться под любую задачу и ситуацию
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="s8">
+        <div class="container">
+          <h2>Видео-отзыв</h2>
+          <iframe
+            width="450"
+            height="270"
+            src="https://www.youtube.com/embed/rRPe213Fvuw"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen=""
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="s9">
+        <div class="container">
+          <h2>Отзывы наших довольных покупателей!</h2>
+
+          <div class="s9-slider">
+            <div class="s9-block white-block">
+              <img class="s9-img" src="img/s9-1.jpg" alt="" />
+
+              <span class="block-name"> <b>Ирина Егорова</b></span> <br />
+              <b><p class="addres">38 лет, Сочи</p></b>
+              <img class="s9-icon-img" src="img/icon-stars.png" alt="" />
+              <p>
+                Спицы очень легкие! Идеально гладкие. Покрытие блестящее с
+                матовым нанесением номера спицы. Удобно помещаются в руку. Лески
+                хорошие, тоненькие. Переход от лески к спице гладкий, при
+                вязании ничего не цепляется. Вяжу ими уже полгода и очень
+                довольна. Все старые спицы лежат пылятся теперь. Не скажу, что у
+                них очень острый кончик. Чуть острее если я сравниваю с таким же
+                размером спиц другой фирмы. И мне это нравится. При вязании
+                палец от накалывания о кончик не устает и не болит. Своим
+                выбором крайне довольна, рекомендую всем.
+              </p>
+            </div>
+            <div class="s9-block white-block">
+              <img class="s9-img" src="img/s9-2.jpg" alt="" />
+
+              <span class="block-name"> <b>Елена Руденко</b></span> <br />
+              <b><p class="addres">35 лет, Краснодар</p></b>
+              <img class="s9-icon-img" src="img/icon-stars.png" alt="" />
+              <p>
+                Мне очень нравится вязать! Прямо занятие для души. Адди -
+                идеальные спицы! Мне очень понравились. Набор состоит из разных
+                размеров спиц и съемных лесок разной длины. Можно присоединить
+                любой размер спиц к леске любой длины. Это очень удобно, так как
+                всегда есть выбор комбинаций и не нужно покупать новые спицы для
+                вязания какой-то определенной модели. Немецкое качество заметно
+                в каждой детали. В общем, очень порадовали спицы, всем очень
+                советую!
+              </p>
+            </div>
+            <div class="s9-block white-block">
+              <img class="s9-img" src="img/s9-3.jpg" alt="" />
+
+              <span class="block-name"> <b>Тамара Руднева</b></span> <br />
+              <b><p class="addres">62 года, Москва</p></b>
+              <img class="s9-icon-img" src="img/icon-stars.png" alt="" />
+              <p>
+                Я регулярно вяжу шапки и другие изделия небольшого диаметра, и
+                чтобы леска не провисала, нужны укороченные спицы и самая
+                маленькая леска. В наборе Адди 5 лесок разного размера. Самая
+                маленькая из которых длиной 40 см, учитывая длину обеих спиц,
+                каждая из которых 8.5 см. То есть самая маленькая леска 23 см
+                длиной. Это идеально подходит для вязания взрослой шапки.
+                Лесками побольше можно вязать платья, свитера и т.д. Если
+                диаметр изделия постепенно увеличивается, что лески можно плавно
+                менять с более короткой до более длинной. Если вязать что то
+                совсем крупное, то можно, используя соединитель, скрепить две
+                лески между собой. Набор очень нравится, можно смело брать.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="s10">
+        <div class="container">
+          <h2>Как мы работаем?</h2>
+          <div class="s10-item">
+            <div class="s10-item-list">
+              <div class="s10-num-block">
+                <div class="s10-num">1</div>
+                <img src="img/s10-1.png" alt="" />
+              </div>
+              <div class="s10-text">
+                Оставьте заявку на заказ через форму ниже
+              </div>
+            </div>
+            <div class="s10-item-list">
+              <div class="s10-num-block">
+                <div class="s10-num">2</div>
+                <img src="img/s10-2.png" alt="" />
+              </div>
+              <div class="s10-text">
+                Наш консультант свяжется с вами для уточнения деталей заказа
+              </div>
+            </div>
+            <div class="s10-item-list">
+              <div class="s10-num-block">
+                <div class="s10-num">3</div>
+                <img src="img/s10-3.png" alt="" />
+              </div>
+              <div class="s10-text">
+                Через несколько дней мы доставим вам товар
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="s1 footer">
+        <div class="s1-title">
+          <h1>
+            <span class="s1-title-top">Addi Click Lace</span>
+          </h1>
+          <div class="s1-title-bottom">Наборы спиц для вязания</div>
+        </div>
+
+        <div class="s1-list">
+          <div class="s1-list-item">
+            <img src="img/icon-true.png" alt="" />
+            <div class="s1-list-text">Гладкое никелирован-ное покрытие</div>
+          </div>
+          <div class="s1-list-item">
+            <img src="img/icon-true.png" alt="" />
+            <div class="s1-list-text">
+              Всё необходимое<br />
+              в 1 наборе
+            </div>
+          </div>
+          <div class="s1-list-item">
+            <img src="img/icon-true.png" alt="" />
+            <div class="s1-list-text">Удобный кожаный чехол- органайзер</div>
+          </div>
+        </div>
+
+        <div class="s1-present">
+          Норковая пряжа и кулон в виде сердца <br />
+          <span>в подарок!</span>
+        </div>
+
+        <div class="form-wrapper">
+          <div class="price">
+            <div class="price-block">
+              <div class="price-old">
+                <div class="price-old-val oldproductsum">3980 руб.</div>
+              </div>
+              <div class="price-new">
+                <span class="price-new-val productsum">1990 руб.</span>
+              </div>
+            </div>
+
+            <div class="price-discount">
+              Активирован<br />
+              промокод на скидку
+              <span>55%</span>
+            </div>
+          </div>
+          <script
+            src="js/date.min.js"
+            integrity=""
+            crossorigin="anonymous"
+          ></script>
+          <script>
+            $(document).ready(function () {
+              date = Date.today().addDays(-7);
+              date_2 = Date.today();
+
+              date = date.toString("dd.MM.yyyy");
+              date_2 = date_2.toString("dd.MM.yyyy");
+
+              $(".date_1").html(date);
+              $(".date_2").html(date_2);
+            });
+          </script>
+          <div class="date">
+            <div class="date-suptitle">Осталось 5 наборов со скидкой</div>
+            <div class="date-title">
+              акция действует до <span class="date_1"></span> -
+              <span class="date_2"></span>
+            </div>
+          </div>
+          <div class="container">
+            <form action="#" method="post" class="orderformcdn" id="form">
+              <div class="form-item">
+                <select
+                  name="country"
+                  class="countryselect form-control location"
+                >
+                  <option value="RU" selected disabled>Россия</option>
+                </select>
+              </div>
+              <div class="form-item">
+                <input
+                  type="text"
+                  name="name"
+                  class="field form-control userneme"
+                  placeholder="Ваше имя..."
+                  value=""
+                />
+              </div>
+              <div class="form-item">
+                <input
+                  type="text"
+                  name="phone"
+                  class="field form-control phone"
+                  placeholder="Ваш телефон..."
+                  value=""
+                />
+              </div>
+              <input
+                type="hidden"
+                name="productsum"
+                class="productsum"
+                value="1 руб."
+              />
+              <input type="hidden" name="delivery" value="0 руб." />
+              <input
+                type="hidden"
+                name="totalsum"
+                class="productsum"
+                value="1 руб."
+              />
+              <input type="hidden" name="user" value="1" />
+              <input
+                type="hidden"
+                name="address"
+                value="Уточнить у покупателя"
+              />
+
+              <div class="reolader form-item">
+                <button
+                  type="submit"
+                  class="form-btn mm_button"
+                  onclick="checkFields(event, this);"
+                >
+                  Заказать сейчас
+                </button>
+                <div class="ajax_loader_block">
+                  <img
+                    class="ajax_loader"
+                    src="img/ajax-loader.gif"
+                    alt="Идет отправка данных"
+                  />
+                  <span class="ajax_loader">Идет отправка данных</span>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="timer">
+            <div class="timer-title">До окончания акции осталось:</div>
+            <div class="countbox"></div>
+            <div class="timer-body">
+              <div class="timer-item">
+                <div class="timer-val">
+                  <div class="timer-num">0</div>
+                  <div class="timer-num">0</div>
+                </div>
+                <div class="timer-name">Часов</div>
+              </div>
+              <div class="timer-separate">:</div>
+              <div class="timer-item">
+                <div class="timer-val">
+                  <div class="timer-num">0</div>
+                  <div class="timer-num">0</div>
+                </div>
+                <div class="timer-name">Минут</div>
+              </div>
+              <div class="timer-separate">:</div>
+              <div class="timer-item">
+                <div class="timer-val">
+                  <div class="timer-num">0</div>
+                  <div class="timer-num">0</div>
+                </div>
+                <div class="timer-name">Секунд</div>
+              </div>
+            </div>
+            <div class="timer-footer">
+              <u>Политика конфиденциальности</u>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="text/javascript">
+      function doc_date(value) {
+        if (value < 10) {
+          value = "0" + value;
+        }
+        return value;
+      }
+
+      function date_time() {
+        var current_datetime = new Date();
+        var day = doc_date(current_datetime.getDate());
+        var month = doc_date(current_datetime.getMonth() + 1);
+        var year = current_datetime.getFullYear();
+
+        return day + "." + month + "." + year;
+      }
+
+      document.getElementById("doc_date").innerHTML = date_time();
+      document.getElementById("doc_date-2").innerHTML = date_time();
+      document.getElementById("doc_date-3").innerHTML = date_time();
+    </script>
+
+    <script type="text/javascript" src="js/slick.min.js"></script>
+
+    <script src="js/main.js"></script>
+
+    <script>
+      $(function () {
+        CountBox();
+        $(".slider-arrows").html("");
+
+        $("a[href^='#']").click(function () {
+          var _href = $(this).attr("href");
+          $("html, body").animate({ scrollTop: $(_href).offset().top + "px" });
+
+          return false;
+        });
+
+        $(".s3-slider").slick({
+          dots: false,
+          infinite: true,
+          speed: 300,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+
+          prevArrow:
+            '<img class="slider-icon_left" src="img/BTN_arrow_back.png" alt="">',
+          nextArrow:
+            '<img class="slider-icon_right" src="img/BTN_arrow_next.png" alt="">',
+        });
+
+        $(".s5-slider").slick({
+          dots: false,
+          infinite: true,
+          speed: 300,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+
+          prevArrow:
+            '<img class="slider-icon_left" src="img/BTN_arrow_back.png" alt="">',
+          nextArrow:
+            '<img class="slider-icon_right" src="img/BTN_arrow_next.png" alt="">',
+        });
+
+        $(".s9-slider").slick({
+          dots: false,
+          infinite: true,
+          speed: 300,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+
+          prevArrow:
+            '<img class="slider-icon_left-2" src="img/BTN_arrow_back.png" alt="">',
+          nextArrow:
+            '<img class="slider-icon_right-2" src="img/BTN_arrow_next.png" alt="">',
+        });
+
+        let filter = $("[data-filter]");
+
+        filter.on("click", function (event) {
+          event.preventDefault();
+
+          let cat = $(this).data("filter");
+
+          $("[data-cat]").each(function () {
+            let workCat = $(this).data("cat");
+
+            if (workCat != cat) {
+              $(this).removeClass("show");
+            } else {
+              $(this).addClass("show");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
